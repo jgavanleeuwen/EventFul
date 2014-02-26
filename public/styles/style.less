@@ -1,0 +1,29 @@
+@import 'reset';
+@import 'mixins';
+
+html {
+	height: 100%;
+	overflow-x: hidden;
+}
+
+body {
+	height: 100%;
+	font-size: 16px; // 1 rem
+	font-family: 'Open Sans', sans-serif;
+}
+
+.page {
+	height: 100vh;
+}
+
+/* NAVBAR */
+@import '_navbar';
+
+/* SIDEBAR */
+@import '_sidebar';
+
+
+/* MEDIA */
+@media print {
+	@import 'print';
+}

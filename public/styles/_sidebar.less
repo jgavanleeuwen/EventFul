@@ -1,0 +1,33 @@
+/* SIDEBAR */
+
+.sidebar {
+	background: #EEE;
+	position: relative;
+	height: 100vh!important;
+}
+
+@media screen and (max-width: 767px) {
+	.sidebar {
+		left: -80%;
+	  width: 80%;
+	  position: absolute;
+	}
+
+	.sidebar.in + .page {
+		left:80%;
+		padding-left:7px;
+
+		.navbar-toggle {
+			margin-left: 15px;
+		}
+
+	}
+
+	.sidebar.in {
+		left:0;
+	}
+
+}
+.sidebar.collapse {
+	display: block;
+}

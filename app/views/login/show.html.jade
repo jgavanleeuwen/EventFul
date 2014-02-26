@@ -1,0 +1,31 @@
+include ../mixins.html.jade
+
+doctype html
+html
+	head
+		include ../head.html.jade
+	
+	body
+
+		.wrap
+
+			// Navigation
+			include ../menu.html.jade
+			
+			// Secondary
+			section
+				.jumbotron
+					.container
+						.row
+							.col-md-8
+							.col-md-4
+								form.form-signin(action="login/local", method="POST", data-bypass="true")
+									h2.form-signin-header
+										| Please login
+									.form-group
+										input.form-control(type="email", name="username", placeholder="Email address", value="jgavanleeuwen@outlook.com")
+									.form-group
+										input.form-control(type="password", name="password", placeholder="Password", value="test")
+									button.btn.btn-lg.btn-primary.btn-block(type="submit") Sign in
+
+		include ../footer.html.jade
