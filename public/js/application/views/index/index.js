@@ -3,8 +3,9 @@ define([
 	'underscore',
 	'backbone',
 	'getbootstrap',
-	'modernizr'
-], function($, _, Backbone, GetBootstrap, Modernizr) {
+	'modernizr',
+	'views/index/recommend/recommends'
+], function($, _, Backbone, GetBootstrap, Modernizr, RecommendView) {
 		var indexView = Backbone.View.extend({
 			el: 'body',
 
@@ -18,7 +19,7 @@ define([
 			},
 
 			render: function() {
-
+				window.App.views.RecommendView = new RecommendView();
 			}
 
 

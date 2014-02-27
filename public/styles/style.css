@@ -5,6 +5,11 @@
   margin-right: 0;
   margin-left: 0;
 }
+ul,
+li {
+  padding: 0;
+  list-style: none;
+}
 html {
   height: 100%;
   overflow-x: hidden;
@@ -13,6 +18,9 @@ body {
   height: 100%;
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
+}
+h2 {
+  font-size: 2rem;
 }
 .page {
   position: relative;
@@ -24,7 +32,41 @@ body {
   -webkit-animation-iteration-count: 1;
      -moz-animation-iteration-count: 1;
 }
-/* NAVBAR */
+/* SIDEBAR */
+/* SIDEBAR */
+.sidebar {
+  position: relative;
+  height: 100vh!important;
+  padding: 15px;
+  background: #eee;
+}
+@media screen and (max-width: 1024px) {
+    .sidebar {
+    position: absolute;
+    left: -400px;
+    width: 400px;
+    -webkit-transition: left 100ms ease-out;
+       -moz-transition: left 100ms ease-out;
+         -o-transition: left 100ms ease-out;
+            transition: left 100ms ease-out;
+    -webkit-animation-iteration-count: 1;
+       -moz-animation-iteration-count: 1;
+    }
+    .sidebar.in + .page {
+    position: absolute;
+    margin-left: 400px;
+    }
+    .sidebar.in {
+    left: 0;
+    }
+    .recommend {
+    display: none;
+    }
+}
+.sidebar.collapse {
+  display: block;
+}
+/* PAGE */
 /* NAVBAR */
 .navbar {
   padding: 0;
@@ -117,34 +159,87 @@ body {
        -o-transform: rotate3d(0, 0, 1, 45deg) translate3d(0, -4px, 0);
           transform: rotate3d(0, 0, 1, 45deg) translate3d(0, -4px, 0);
 }
-/* SIDEBAR */
-/* SIDEBAR */
-.sidebar {
-  position: relative;
-  height: 100vh!important;
-  padding: 15px;
-  background: #eee;
+.recommend {
+  height: 100vh;
+  overflow: hidden;
+  border-left: solid #ccc 1px;
 }
-@media screen and (max-width: 1024px) {
-    .sidebar {
-    position: absolute;
-    left: -400px;
-    width: 400px;
-    -webkit-transition: left 100ms ease-out;
-       -moz-transition: left 100ms ease-out;
-         -o-transition: left 100ms ease-out;
-            transition: left 100ms ease-out;
-    -webkit-animation-iteration-count: 1;
-       -moz-animation-iteration-count: 1;
-    }
-    .sidebar.in + .page {
-    position: absolute;
-    margin-left: 400px;
-    }
-    .sidebar.in {
-    left: 0;
-    }
+.recommend > .row {
+  padding: 0 15px;
 }
-.sidebar.collapse {
+.recommend .light {
+  font-weight: 100;
+  color: #aaa;
+}
+.recommend .light:before {
+  content: "(";
+}
+.recommend .light:after {
+  content: ")";
+}
+.recommend .events {
+  font-size: 13px;
+}
+.recommend .events li {
+  padding: 8px 0;
+}
+.recommend .events li:hover .cal {
+  background: #bbb;
+}
+.recommend .events li span {
   display: block;
+  white-space: nowrap;
+}
+.recommend .events li .cal {
+  width: 60px;
+  height: 60px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 3px;
+  background: #ccc;
+  border-radius: 20%;
+  -webkit-transition: all .2s ease-out;
+     -moz-transition: all .2s ease-out;
+       -o-transition: all .2s ease-out;
+          transition: all .2s ease-out;
+  -webkit-animation-iteration-count: 1;
+     -moz-animation-iteration-count: 1;
+
+      -ms-box-sizing: border-box;
+}
+.recommend .events li .cal span {
+  color: #fff;
+  text-align: center;
+}
+.recommend .events li .cal .mnt {
+  font-size: 1em;
+}
+.recommend .events li .cal .day {
+  margin-top: -5px;
+  font-size: 3rem;
+  font-weight: 600;
+}
+@media screen and (max-width: 1200px) {
+    .recommend .events li .cal {
+    height: auto;
+    overflow: hidden;
+    border-radius: 3px;
+    }
+    .recommend .events li .cal .day,
+  .recommend .events li .cal .mnt {
+    position: relative;
+    float: left;
+    margin: 0 0 0 5px;
+    font-size: 13px;
+    }
+}
+.recommend .events li .title {
+  font-weight: bold;
+}
+.recommend .events li .venue {
+  margin: 2px 0;
+  font-size: 12px;
+  font-style: italic;
+  color: #999;
 }

@@ -20,4 +20,6 @@ function(Backbone, App, Router) {
 
 	});
 
+	$('.js-tooltip').tooltip();
+
 });

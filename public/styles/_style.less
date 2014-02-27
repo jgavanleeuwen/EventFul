@@ -12,15 +12,20 @@ body {
 	font-family: 'Open Sans', sans-serif;
 }
 
+h2 {
+	font-size: 2rem;
+}
+
 .page {
 	height: 100vh;
 	position: relative;
 	.transition(100ms, ease-out, 1, margin);
 }
 
-/* NAVBAR */
-@import '_navbar';
-
 /* SIDEBAR */
 @import '_sidebar';
 
+
+/* PAGE */
+@import '_navbar';
+@import '_recommend';

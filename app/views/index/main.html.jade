@@ -4,6 +4,9 @@ doctype html
 html
 	head
 		include ../head.html.jade
+
+		script.
+			var recommendData = !{JSON.stringify(output, undefined, 2)};
 	
 	body
 
@@ -11,5 +14,19 @@ html
 			.col-xs-2.sidebar
 				| VET
 			.col-xs-12.col-sm-10.page
-				.row 
-					include ../menu.html.jade
+				.row.row-offcanvas.row-offcanvas-right
+					.col-xs-12.col-sm-9
+						include ../menu.html.jade
+					#recommend.col-sm-3.recommend
+						.navbar.navbar-static-top.navbar-inverse(role="navigation")
+							.container-fluid
+								.navbar-header
+									ul.nav.navbar-nav.navbar-right
+										li
+											a(href="#") 
+												strong Utrecht
+						.row
+							h2 Upcoming 
+								span.js-number.light
+						.row
+							ul.events

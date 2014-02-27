@@ -5,6 +5,11 @@
   margin-left: 0;
   margin-right: 0;
 }
+ul,
+li {
+  list-style: none;
+  padding: 0;
+}
 html {
   height: 100%;
   overflow-x: hidden;
@@ -13,6 +18,9 @@ body {
   height: 100%;
   font-size: 16px;
   font-family: 'Open Sans', sans-serif;
+}
+h2 {
+  font-size: 2rem;
 }
 .page {
   height: 100vh;
@@ -24,7 +32,41 @@ body {
   -webkit-animation-iteration-count: 1;
   -moz-animation-iteration-count: 1;
 }
-/* NAVBAR */
+/* SIDEBAR */
+/* SIDEBAR */
+.sidebar {
+  background: #EEE;
+  position: relative;
+  height: 100vh!important;
+  padding: 15px;
+}
+@media screen and (max-width: 1024px) {
+  .sidebar {
+    left: -400px;
+    width: 400px;
+    position: absolute;
+    -webkit-transition: left 100ms ease-out;
+    -moz-transition: left 100ms ease-out;
+    -o-transition: left 100ms ease-out;
+    transition: left 100ms ease-out;
+    -webkit-animation-iteration-count: 1;
+    -moz-animation-iteration-count: 1;
+  }
+  .sidebar.in + .page {
+    position: absolute;
+    margin-left: 400px;
+  }
+  .sidebar.in {
+    left: 0;
+  }
+  .recommend {
+    display: none;
+  }
+}
+.sidebar.collapse {
+  display: block;
+}
+/* PAGE */
 /* NAVBAR */
 .navbar {
   padding: 0;
@@ -117,34 +159,86 @@ body {
   -ms-transform: rotate3d(0, 0, 1, 45deg) translate3d(0, -4px, 0);
   transform: rotate3d(0, 0, 1, 45deg) translate3d(0, -4px, 0);
 }
-/* SIDEBAR */
-/* SIDEBAR */
-.sidebar {
-  background: #EEE;
-  position: relative;
-  height: 100vh!important;
-  padding: 15px;
+.recommend {
+  border-left: solid #CCC 1px;
+  height: 100vh;
+  overflow: hidden;
 }
-@media screen and (max-width: 1024px) {
-  .sidebar {
-    left: -400px;
-    width: 400px;
-    position: absolute;
-    -webkit-transition: left 100ms ease-out;
-    -moz-transition: left 100ms ease-out;
-    -o-transition: left 100ms ease-out;
-    transition: left 100ms ease-out;
-    -webkit-animation-iteration-count: 1;
-    -moz-animation-iteration-count: 1;
-  }
-  .sidebar.in + .page {
-    position: absolute;
-    margin-left: 400px;
-  }
-  .sidebar.in {
-    left: 0;
-  }
+.recommend > .row {
+  padding: 0 15px;
 }
-.sidebar.collapse {
+.recommend .light {
+  color: #AAA;
+  font-weight: 100;
+}
+.recommend .light:before {
+  content: "(";
+}
+.recommend .light:after {
+  content: ")";
+}
+.recommend .events {
+  font-size: 13px;
+}
+.recommend .events li {
+  padding: 8px 0;
+}
+.recommend .events li:hover .cal {
+  background: #BBB;
+}
+.recommend .events li span {
   display: block;
+  white-space: nowrap;
+}
+.recommend .events li .cal {
+  background: #CCC;
+  border-radius: 20%;
+  width: 60px;
+  height: 60px;
+  padding: 3px;
+  -ms-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  -webkit-animation-iteration-count: 1;
+  -moz-animation-iteration-count: 1;
+}
+.recommend .events li .cal span {
+  text-align: center;
+  color: #FFF;
+}
+.recommend .events li .cal .mnt {
+  font-size: 1em;
+}
+.recommend .events li .cal .day {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-top: -5px;
+}
+@media screen and (max-width: 1200px) {
+  .recommend .events li .cal {
+    height: auto;
+    overflow: hidden;
+    border-radius: 3px;
+  }
+  .recommend .events li .cal .day,
+  .recommend .events li .cal .mnt {
+    position: relative;
+    float: left;
+    font-size: 13px;
+    margin: 0 0 0 5px;
+  }
+}
+.recommend .events li .title {
+  font-weight: bold;
+}
+.recommend .events li .venue {
+  font-style: italic;
+  color: #999;
+  font-size: 12px;
+  margin: 2px 0;
 }

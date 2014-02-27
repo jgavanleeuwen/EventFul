@@ -2,5 +2,6 @@
 	"import": 2,
 	"adjoining-classes": false,
 	"known-properties": false,
-	"important": false
+	"important": false,
+	"box-sizing": false
 }
