@@ -1,7 +1,7 @@
 var locomotive = require('locomotive');
 var colors = require('colors');
 var	env = process.env.NODE_ENV || 'development';
-var	port = process.env.PORT || 3000;
+var	port = process.env.PORT || 3040;
 var	address = '0.0.0.0';
 
 locomotive.boot('./', env, function(err, server) {

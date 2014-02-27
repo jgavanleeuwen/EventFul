@@ -1,90 +1,99 @@
 .navbar {
   margin-bottom: 0;
 }
-/*---------------------------------------------------
-    LESS Elements 0.9
-  ---------------------------------------------------
-    A set of useful LESS mixins
-    More info at: http://lesselements.com
-  ---------------------------------------------------*/
+.row {
+  margin-right: 0;
+  margin-left: 0;
+}
 html {
   height: 100%;
   overflow-x: hidden;
 }
 body {
   height: 100%;
-  font-size: 16px;
   font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
 }
 .page {
+  position: relative;
   height: 100vh;
+  -webkit-transition: margin 100ms ease-out;
+     -moz-transition: margin 100ms ease-out;
+       -o-transition: margin 100ms ease-out;
+          transition: margin 100ms ease-out;
+  -webkit-animation-iteration-count: 1;
+     -moz-animation-iteration-count: 1;
 }
 /* NAVBAR */
 /* NAVBAR */
 .navbar {
   padding: 0;
 }
+.navbar .navbar-toggle {
+  float: left;
+  margin-left: 10px;
+}
 /* SPECIALS */
 .toggle {
-  visibility: hidden;
   position: absolute;
   left: -9999px;
+  visibility: hidden;
 }
 .hamburger {
+  position: relative;
   top: 50%;
   left: 50%;
-  margin: 1px 10px 3px -12px;
   display: block;
   width: 24px;
   height: 12px;
-  position: relative;
-  -webkit-transition: all 0.2s ease-out;
-  -moz-transition: all 0.2s ease-out;
-  -o-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out;
-  -webkit-animation-iteration-count: 1;
-  -moz-animation-iteration-count: 1;
+  margin: 1px 10px 3px -12px;
   cursor: pointer;
+  -webkit-transition: all .2s ease-out;
+     -moz-transition: all .2s ease-out;
+       -o-transition: all .2s ease-out;
+          transition: all .2s ease-out;
+  -webkit-animation-iteration-count: 1;
+     -moz-animation-iteration-count: 1;
 }
 .hamburger i {
-  display: block;
-  text-indent: 100%;
-  overflow: hidden;
-  white-space: nowrap;
-  height: 2px;
-  background-color: white;
-  width: 100%;
   position: absolute;
   top: 50%;
-  -webkit-transition: all 0.2s ease-out;
-  -moz-transition: all 0.2s ease-out;
-  -o-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out;
-  -webkit-animation-iteration-count: 1;
-  -moz-animation-iteration-count: 1;
+  display: block;
+  width: 100%;
+  height: 2px;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  background-color: white;
+  -webkit-transition: all .2s ease-out;
+     -moz-transition: all .2s ease-out;
+       -o-transition: all .2s ease-out;
+          transition: all .2s ease-out;
   transition-delay: .2s;
+  -webkit-animation-iteration-count: 1;
+     -moz-animation-iteration-count: 1;
 }
 .hamburger:after,
 .hamburger:before {
-  content: '';
   position: absolute;
   top: 0;
-  height: 0;
-  border-bottom: 2px solid white;
-  width: 100%;
-  left: 0;
   right: 0;
-  -webkit-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  -moz-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  -o-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  -webkit-animation-iteration-count: 1;
-  -moz-animation-iteration-count: 1;
+  left: 0;
+  width: 100%;
+  height: 0;
+  content: '';
+  border-bottom: 2px solid white;
+  -webkit-transition: all .5s cubic-bezier(.68, -.55, .265, 1.55);
+     -moz-transition: all .5s cubic-bezier(.68, -.55, .265, 1.55);
+       -o-transition: all .5s cubic-bezier(.68, -.55, .265, 1.55);
+          transition: all .5s cubic-bezier(.68, -.55, .265, 1.55);
   -webkit-transform-origin: left top;
-  -moz-transform-origin: left top;
-  -o-transform-origin: left top;
-  -ms-transform-origin: left top;
-  transform-origin: left top;
+     -moz-transform-origin: left top;
+      -ms-transform-origin: left top;
+       -o-transform-origin: left top;
+          transform-origin: left top;
+  -webkit-animation-iteration-count: 1;
+     -moz-animation-iteration-count: 1;
 }
 .hamburger:after {
   top: 100%;
@@ -96,61 +105,46 @@ body {
 }
 .toggle:checked + .hamburger:after {
   -webkit-transform: rotate3d(0, 0, 1, -45deg) translate3d(0, 4px, 0);
-  -moz-transform: rotate3d(0, 0, 1, -45deg) translate3d(0, 4px, 0);
-  -o-transform: rotate3d(0, 0, 1, -45deg) translate3d(0, 4px, 0);
-  -ms-transform: rotate3d(0, 0, 1, -45deg) translate3d(0, 4px, 0);
-  transform: rotate3d(0, 0, 1, -45deg) translate3d(0, 4px, 0);
+     -moz-transform: rotate3d(0, 0, 1, -45deg) translate3d(0, 4px, 0);
+      -ms-transform: rotate3d(0, 0, 1, -45deg) translate3d(0, 4px, 0);
+       -o-transform: rotate3d(0, 0, 1, -45deg) translate3d(0, 4px, 0);
+          transform: rotate3d(0, 0, 1, -45deg) translate3d(0, 4px, 0);
 }
 .toggle:checked + .hamburger:before {
   -webkit-transform: rotate3d(0, 0, 1, 45deg) translate3d(0, -4px, 0);
-  -moz-transform: rotate3d(0, 0, 1, 45deg) translate3d(0, -4px, 0);
-  -o-transform: rotate3d(0, 0, 1, 45deg) translate3d(0, -4px, 0);
-  -ms-transform: rotate3d(0, 0, 1, 45deg) translate3d(0, -4px, 0);
-  transform: rotate3d(0, 0, 1, 45deg) translate3d(0, -4px, 0);
+     -moz-transform: rotate3d(0, 0, 1, 45deg) translate3d(0, -4px, 0);
+      -ms-transform: rotate3d(0, 0, 1, 45deg) translate3d(0, -4px, 0);
+       -o-transform: rotate3d(0, 0, 1, 45deg) translate3d(0, -4px, 0);
+          transform: rotate3d(0, 0, 1, 45deg) translate3d(0, -4px, 0);
 }
 /* SIDEBAR */
 /* SIDEBAR */
 .sidebar {
-  background: #EEE;
   position: relative;
   height: 100vh!important;
+  padding: 15px;
+  background: #eee;
 }
-@media screen and (max-width: 767px) {
-  .sidebar {
-    left: -80%;
-    width: 80%;
+@media screen and (max-width: 1024px) {
+    .sidebar {
     position: absolute;
-  }
-  .sidebar.in + .page {
-    left: 80%;
-    padding-left: 7px;
-  }
-  .sidebar.in + .page .navbar-toggle {
-    margin-left: 15px;
-  }
-  .sidebar.in {
+    left: -400px;
+    width: 400px;
+    -webkit-transition: left 100ms ease-out;
+       -moz-transition: left 100ms ease-out;
+         -o-transition: left 100ms ease-out;
+            transition: left 100ms ease-out;
+    -webkit-animation-iteration-count: 1;
+       -moz-animation-iteration-count: 1;
+    }
+    .sidebar.in + .page {
+    position: absolute;
+    margin-left: 400px;
+    }
+    .sidebar.in {
     left: 0;
-  }
+    }
 }
 .sidebar.collapse {
   display: block;
-}
-/* MEDIA */
-@media print {
-  .noprint,
-  .modal {
-    display: none;
-  }
-  .printonly {
-    display: block;
-  }
-  a[href] {
-    text-decoration: none;
-  }
-  a[href]:after {
-    display: none;
-  }
-  body {
-    padding: 0 50px;
-  }
 }

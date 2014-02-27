@@ -1,5 +1,5 @@
-@import 'reset';
-@import 'mixins';
+@import '_reset';
+@import '_mixins';
 
 html {
 	height: 100%;
@@ -14,6 +14,8 @@ body {
 
 .page {
 	height: 100vh;
+	position: relative;
+	.transition(100ms, ease-out, 1, margin);
 }
 
 /* NAVBAR */
@@ -22,8 +24,3 @@ body {
 /* SIDEBAR */
 @import '_sidebar';
 
-
-/* MEDIA */
-@media print {
-	@import 'print';
-}

@@ -1,6 +1,6 @@
 {
 	"import": 2,
 	"adjoining-classes": false,
-	"box-model": false,
-	"box-sizing": false
+	"known-properties": false,
+	"important": false
 }

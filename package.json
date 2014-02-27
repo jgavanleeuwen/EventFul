@@ -34,6 +34,7 @@
     "grunt-contrib-csslint": "~0.1.2",
     "grunt-concurrent": "~0.4.2",
     "grunt-nodemon": "~0.1.2",
-    "grunt-mkdir": "~0.1.1"
+    "grunt-mkdir": "~0.1.1",
+    "grunt-csscomb": "~2.0.1"
   }
 }

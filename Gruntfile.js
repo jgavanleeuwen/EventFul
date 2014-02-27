@@ -15,7 +15,8 @@ module.exports = function(grunt) {
 		less: {
 			compile: {
 				files: {
-					'public/styles/style.css': 'public/styles/style.less'
+					'public/styles/resorted-style.css': 'public/styles/_style.less'//,
+//					'public/styles/bootstrap/bootstrap.css': 'public/styles/bootstrap/bootstrap.less'
 				}
 			}
 		},
@@ -27,6 +28,18 @@ module.exports = function(grunt) {
 			    csslintrc: '.csslintrc'
 			  },
 				src: ['public/styles/style.css']
+			}
+		},
+
+		// Task: Comb CSS
+		csscomb: {
+			dist: {
+				options: {
+					config: '.csscomb'
+				},
+				files: {
+					'public/styles/style.css': 'public/styles/resorted-style.css'
+				}
 			}
 		},
 
@@ -71,8 +84,12 @@ module.exports = function(grunt) {
 				}
 			},
 			less: {
-				files: ['public/styles/*.less'],
+				files: ['public/styles/**/*.less'],
 				tasks: ['less']
+			},
+			csscomb: {
+				files: ['public/styles/resorted-style.css'],
+				tasks: ['csscomb']
 			},
 			csslint: {
 				files: ['public/styles/style.css'],
@@ -97,7 +114,10 @@ module.exports = function(grunt) {
 	// Load the plugin for JSHint
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 
-	// Load the plugin for HTML lint
+	// Load the plugin for CSS Comb
+	grunt.loadNpmTasks('grunt-csscomb');
+
+		// Load the plugin for CSS lint
 	grunt.loadNpmTasks('grunt-contrib-csslint');
 
 	// Load the plugin for LESS
