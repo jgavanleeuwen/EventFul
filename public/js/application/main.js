@@ -1,9 +1,10 @@
 require([
 	"backbone",
 	"app",
-	"router"
+	"router",
+	"mobile"
 ],
-function(Backbone, App, Router) {
+function(Backbone, App, Router, Mobile) {
 
 	App.router = new Router();
 	Backbone.history.start({ pushState: true, root: '' });
@@ -21,5 +22,12 @@ function(Backbone, App, Router) {
 	});
 
 	$('.js-tooltip').tooltip();
+
+	$(".js-carousel").swiperight(function() {  
+		$(this).carousel('prev');  
+	});  
+	$(".js-carousel").swipeleft(function() {  
+		$(this).carousel('next');  
+	});
 
 });

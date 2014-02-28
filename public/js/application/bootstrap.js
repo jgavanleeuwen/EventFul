@@ -15,7 +15,10 @@ require.config({
 		typeahead: '../plugins/typeahead/typeahead.min',
 
 		// Moment
-		moment: '../plugins/moment/moment.min'
+		moment: '../plugins/moment/moment.min',
+
+		// Jquery Mobile
+		mobile: '../plugins/mobile/jquery.mobile.min'
 	},
 	shim: {
 		underscore: {
@@ -29,6 +32,9 @@ require.config({
 			deps: ['jquery']
 		},
 		typeahead: {
+			deps: ['jquery']
+		},
+		mobile: {
 			deps: ['jquery']
 		}
 	},
