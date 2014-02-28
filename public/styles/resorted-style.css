@@ -10,6 +10,9 @@ li {
   list-style: none;
   padding: 0;
 }
+a:hover {
+  text-decoration: none;
+}
 /* COLORS */
 html {
   height: 100%;
@@ -72,6 +75,21 @@ section {
   position: relative;
   height: 100vh!important;
   padding: 15px;
+}
+.sidebar form {
+  margin-top: 50px;
+}
+.sidebar form input[type="text"] {
+  background: #DDD;
+  padding: 20px 10px;
+}
+.sidebar .secnav {
+  margin-top: 50px;
+}
+.sidebar .secnav li a {
+  color: #000;
+  font-size: 3rem;
+  font-weight: 100;
 }
 @media screen and (max-width: 1024px) {
   .sidebar {

@@ -12,6 +12,32 @@ html
 
 		.row.row-offcanvas.row-offcanvas-left
 			.col-xs-2.sidebar
+				form(role="form").row
+					.form-group
+						input.form-control.search(type="text", placeholder="Search")
+					.btn-group.btn-block
+						button(type="button").btn.btn-primary
+							| Search events
+						button(type="button", data-toggle="dropdown").btn.btn-primary.dropdown-toggle
+							span.caret
+						ul.dropdown-menu(role="menu")
+							li
+								a(href="#") Action
+				.row
+					.col-md-12
+						ul.secnav
+							li 
+								a(href="#") All events
+							li 
+								a(href="#") Sports
+							li 
+								a(href="#") Music
+							li 
+								a(href="#") Theatre
+
+
+
+
 
 			.col-xs-12.col-sm-10.page
 				.row.row-offcanvas.row-offcanvas-right
