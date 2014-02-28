@@ -22,6 +22,22 @@ body {
 h2 {
   font-size: 2rem;
 }
+section {
+  padding: 20px;
+}
+.light {
+  font-weight: 100;
+  color: #aaa;
+}
+.light:before {
+  content: "(";
+}
+.light:after {
+  content: ")";
+}
+.img-thumbnail {
+  box-shadow: 0 2px 3px rgba(0, 0, 0, .1);
+}
 .page {
   position: relative;
   height: 100vh;
@@ -159,6 +175,51 @@ h2 {
        -o-transform: rotate3d(0, 0, 1, 45deg) translate3d(0, -4px, 0);
           transform: rotate3d(0, 0, 1, 45deg) translate3d(0, -4px, 0);
 }
+.newest .section-title {
+  padding: 0;
+  margin: 0;
+}
+.newest .section-title,
+.newest .more {
+  position: relative;
+  float: left;
+}
+.newest .more {
+  padding-top: 3px;
+  margin-left: 30px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #000;
+}
+.newest .thumb-holder {
+  position: relative;
+  display: block;
+  overflow-x: scroll;
+  clear: both;
+}
+.newest .thumb-holder .thumbs {
+  padding: 10px 0 20px 0;
+  white-space: nowrap;
+}
+.newest .thumb-holder .thumbs img:not(:last-child) {
+  margin-right: 30px;
+}
+.newest .thumb-holder:safter {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 30px;
+  height: 100%;
+  content: "";
+  background: transparent;
+  background: -webkit-linear-gradient(right, #fff, rgba(255, 255, 255, 0));
+  background: -webkit-gradient(linear, left top, right top, color-stop(0, rgba(255, 255, 255, 0)), color-stop(1, #fff));
+  background:     -ms-linear-gradient(bottom, rgba(255, 255, 255, 0), #fff);
+  background:    -moz-linear-gradient(center bottom, rgba(255, 255, 255, 0) 0%, #fff 100%);
+  background:      -o-linear-gradient(#fff, rgba(255, 255, 255, 0));
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='rgba(255, 255, 255, 0)', GradientType=0);
+}
 .recommend {
   height: 100vh;
   overflow: hidden;
@@ -166,16 +227,6 @@ h2 {
 }
 .recommend > .row {
   padding: 0 15px;
-}
-.recommend .light {
-  font-weight: 100;
-  color: #aaa;
-}
-.recommend .light:before {
-  content: "(";
-}
-.recommend .light:after {
-  content: ")";
 }
 .recommend .events {
   font-size: 13px;
@@ -188,7 +239,6 @@ h2 {
 }
 .recommend .events li span {
   display: block;
-  white-space: nowrap;
 }
 .recommend .events li .cal {
   width: 60px;
@@ -199,12 +249,6 @@ h2 {
   padding: 3px;
   background: #ccc;
   border-radius: 20%;
-  -webkit-transition: all .2s ease-out;
-     -moz-transition: all .2s ease-out;
-       -o-transition: all .2s ease-out;
-          transition: all .2s ease-out;
-  -webkit-animation-iteration-count: 1;
-     -moz-animation-iteration-count: 1;
 
       -ms-box-sizing: border-box;
 }
@@ -213,7 +257,8 @@ h2 {
   text-align: center;
 }
 .recommend .events li .cal .mnt {
-  font-size: 1em;
+  font-size: 1.1em;
+  font-weight: bold;
 }
 .recommend .events li .cal .day {
   margin-top: -5px;

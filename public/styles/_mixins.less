@@ -34,13 +34,23 @@
                                  rgb(@start,@start,@start));
   filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",rgb(@stop,@stop,@stop),rgb(@start,@start,@start)));
 }
-.custom-gradient() {
-  background: -moz-linear-gradient(top,  rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.35) 51%, rgba(255,255,255,0.35) 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.4)), color-stop(50%,rgba(255,255,255,0.4)), color-stop(51%,rgba(255,255,255,0.35)), color-stop(100%,rgba(255,255,255,0.35)));
-  background: -webkit-linear-gradient(top,  rgba(255,255,255,0.4) 0%,rgba(255,255,255,0.4) 50%,rgba(255,255,255,0.35) 51%,rgba(255,255,255,0.35) 100%);
-  background: -o-linear-gradient(top,  rgba(255,255,255,0.4) 0%,rgba(255,255,255,0.4) 50%,rgba(255,255,255,0.35) 51%,rgba(255,255,255,0.35) 100%);
-  background: -ms-linear-gradient(top,  rgba(255,255,255,0.4) 0%,rgba(255,255,255,0.4) 50%,rgba(255,255,255,0.35) 51%,rgba(255,255,255,0.35) 100%);
-  background: linear-gradient(to bottom,  rgba(255,255,255,0.4) 0%,rgba(255,255,255,0.4) 50%,rgba(255,255,255,0.35) 51%,rgba(255,255,255,0.35) 100%);
+.horizontal-gradient(@color: #F5F5F5, @start: #EEE, @stop: #FFF) {
+  background: @color;
+  background: -webkit-linear-gradient(right, @stop, @start);
+  background: -webkit-gradient(linear,
+                               left top,
+                               right top,
+                               color-stop(0, @start),
+                               color-stop(1, @stop));
+  background: -ms-linear-gradient(bottom,
+                                  @start,
+                                  @stop);
+  background: -moz-linear-gradient(center bottom,
+                                   @start 0%,
+                                   @stop 100%);
+  background: -o-linear-gradient(@stop,
+                                 @start);
+  filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@stop,@start));
 }
 .bordered(@top-color: #EEE, @right-color: #EEE, @bottom-color: #EEE, @left-color: #EEE) {
   border-top: solid 1px @top-color;

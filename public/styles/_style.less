@@ -16,6 +16,29 @@ h2 {
 	font-size: 2rem;
 }
 
+section {
+	padding: 20px;
+}
+
+
+
+
+.light {
+	color: #AAA;
+	font-weight: 100;
+	
+	&:before {
+		content: "(";
+	}
+	&:after {
+		content: ")";
+	}
+}
+
+.img-thumbnail {
+	box-shadow: 0 2px 3px rgba(0,0,0,.1);
+}
+
 .page {
 	height: 100vh;
 	position: relative;
@@ -28,4 +51,7 @@ h2 {
 
 /* PAGE */
 @import '_navbar';
+@import '_newest';
+
+
 @import '_recommend';

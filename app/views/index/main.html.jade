@@ -17,6 +17,29 @@ html
 				.row.row-offcanvas.row-offcanvas-right
 					.col-xs-12.col-sm-9
 						include ../menu.html.jade
+
+						section.highlight
+							.row
+								.col-md-12
+									img.img-thumbnail(src="http://placehold.it/1000x250", width="100%")
+
+						section.newest
+							.row
+								.col-md-12
+									h2.section-title Newest 
+										span.js-number.light 12
+									a(href="#").more See all 
+										i.fa.fa-caret-right
+								#newest.row.thumb-holder
+									.thumbs
+										img.img-thumbnail(src="http://placehold.it/220x120", width="250")
+										img.img-thumbnail(src="http://placehold.it/220x120", width="250")
+										img.img-thumbnail(src="http://placehold.it/220x120", width="250")
+										img.img-thumbnail(src="http://placehold.it/220x120", width="250")
+										img.img-thumbnail(src="http://placehold.it/220x120", width="250")
+										img.img-thumbnail(src="http://placehold.it/220x120", width="250")
+
+
 					#recommend.col-sm-3.recommend
 						.navbar.navbar-static-top.navbar-inverse(role="navigation")
 							.container-fluid
@@ -26,7 +49,9 @@ html
 											a(href="#") 
 												strong Utrecht
 						.row
-							h2 Upcoming 
-								span.js-number.light
+							.col-md-12
+								h2 Upcoming 
+									span.js-number.light
 						.row
-							ul.events
+							.col-md-12
+								ul.events
