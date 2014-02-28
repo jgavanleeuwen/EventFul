@@ -35,6 +35,22 @@ section {
 .light:after {
   content: ")";
 }
+.section-title {
+  padding: 0;
+  margin: 0;
+}
+.section-title,
+.more {
+  position: relative;
+  float: left;
+}
+.more {
+  padding-top: 3px;
+  margin-left: 30px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #000;
+}
 .img-thumbnail {
   box-shadow: 0 2px 3px rgba(0, 0, 0, .1);
 }
@@ -175,21 +191,27 @@ section {
        -o-transform: rotate3d(0, 0, 1, 45deg) translate3d(0, -4px, 0);
           transform: rotate3d(0, 0, 1, 45deg) translate3d(0, -4px, 0);
 }
-.newest .section-title {
-  padding: 0;
-  margin: 0;
-}
-.newest .section-title,
-.newest .more {
+.highlight .carousel-indicators {
   position: relative;
-  float: left;
+  top: 10px;
+  bottom: 0;
+  margin-bottom: 0;
 }
-.newest .more {
-  padding-top: 3px;
-  margin-left: 30px;
-  font-size: 14px;
-  font-weight: bold;
-  color: #000;
+.highlight .carousel-indicators .indicator {
+  width: 10px;
+  height: 10px;
+  margin: 0 3px;
+  background-color: #ccc;
+  border: none;
+  -webkit-transition: all .2s ease-out;
+     -moz-transition: all .2s ease-out;
+       -o-transition: all .2s ease-out;
+          transition: all .2s ease-out;
+  -webkit-animation-iteration-count: 1;
+     -moz-animation-iteration-count: 1;
+}
+.highlight .carousel-indicators .indicator.active {
+  background-color: #3276b1;
 }
 .newest .thumb-holder {
   position: relative;
@@ -227,6 +249,11 @@ section {
 }
 .recommend > .row {
   padding: 0 15px;
+}
+.recommend .section-title,
+.recommend .more {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 .recommend .events {
   font-size: 13px;

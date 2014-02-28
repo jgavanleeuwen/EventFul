@@ -21,7 +21,17 @@ html
 						section.highlight
 							.row
 								.col-md-12
-									img.img-thumbnail(src="http://placehold.it/1000x250", width="100%")
+									#carousel.carousel.slide(data-ride="carousel")
+										.carousel-inner
+											.item.active
+												img.img-thumbnail(src="http://placehold.it/1000x400", width="100%")
+											.item
+												img.img-thumbnail(src="http://placehold.it/1000x400", width="100%")
+										ol.carousel-indicators
+											li.indicator.active(data-target="#carousel", data-slide-to="0")
+											li.indicator(data-target="#carousel", data-slide-to="1")
+											li.indicator(data-target="#carousel", data-slide-to="2")
+
 
 						section.newest
 							.row
@@ -50,8 +60,10 @@ html
 												strong Utrecht
 						.row
 							.col-md-12
-								h2 Upcoming 
+								h2.section-title Upcoming 
 									span.js-number.light
+								a(href="#").more See all 
+									i.fa.fa-caret-right
 						.row
 							.col-md-12
 								ul.events

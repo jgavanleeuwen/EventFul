@@ -14,7 +14,7 @@ IndexController.before('main', function(next) {
 
 	http.request({
 		host: 'api.evdb.com',
-		path: '/json/events/search?app_key=KrTkTDrh3P5LXnt4&location=Utrecht&page_size=10&page_number=0',
+		path: '/json/events/search?app_key=KrTkTDrh3P5LXnt4&location=Utrecht&q=music&page_size=10&page_number=0&sort_order=date',
 		method: 'GET'
 	}, function(response) {
 

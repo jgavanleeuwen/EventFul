@@ -35,6 +35,22 @@ section {
 .light:after {
   content: ")";
 }
+.section-title {
+  margin: 0;
+  padding: 0;
+}
+.section-title,
+.more {
+  position: relative;
+  float: left;
+}
+.more {
+  font-size: 14px;
+  padding-top: 3px;
+  font-weight: bold;
+  margin-left: 30px;
+  color: #000;
+}
 .img-thumbnail {
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
 }
@@ -175,21 +191,27 @@ section {
   -ms-transform: rotate3d(0, 0, 1, 45deg) translate3d(0, -4px, 0);
   transform: rotate3d(0, 0, 1, 45deg) translate3d(0, -4px, 0);
 }
-.newest .section-title {
-  margin: 0;
-  padding: 0;
-}
-.newest .section-title,
-.newest .more {
+.highlight .carousel-indicators {
   position: relative;
-  float: left;
+  top: 10px;
+  bottom: 0;
+  margin-bottom: 0;
 }
-.newest .more {
-  font-size: 14px;
-  padding-top: 3px;
-  font-weight: bold;
-  margin-left: 30px;
-  color: #000;
+.highlight .carousel-indicators .indicator {
+  margin: 0 3px;
+  width: 10px;
+  height: 10px;
+  border: none;
+  background-color: #CCC;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  -webkit-animation-iteration-count: 1;
+  -moz-animation-iteration-count: 1;
+}
+.highlight .carousel-indicators .indicator.active {
+  background-color: #3276b1;
 }
 .newest .thumb-holder {
   overflow-x: scroll;
@@ -227,6 +249,11 @@ section {
 }
 .recommend > .row {
   padding: 0 15px;
+}
+.recommend .section-title,
+.recommend .more {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 .recommend .events {
   font-size: 13px;
