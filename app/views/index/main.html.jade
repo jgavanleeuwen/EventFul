@@ -11,11 +11,11 @@ html
 	body
 
 		.row.row-offcanvas.row-offcanvas-left
-			.col-xs-2.sidebar
+			#menu.col-xs-2.sidebar
 				form(role="form").row
 					.form-group
-						input.form-control.search(type="text", placeholder="Search")
-					.btn-group.btn-block
+						input.form-control.input-lg.search(type="text", placeholder="Search", name="query")
+					.btn-group.btn-block.btn-group-lg
 						button(type="button").btn.btn-primary
 							| Search events
 						button(type="button", data-toggle="dropdown").btn.btn-primary.dropdown-toggle
@@ -29,9 +29,22 @@ html
 							li 
 								a(href="#") All events
 							li 
-								a(href="#") Sports
+								a(href="#", data-toggle="collapse", data-parent=".secnav", href="#sports") Sports
+								ul#sports.collapse
+									li
+										a(href="#") Soccer 
+											span.light 14
+									li
+										a(href="#") Basketball 
+											span.light 8
 							li 
-								a(href="#") Music
+								a(href="#", data-toggle="collapse", data-parent=".secnav", href="#music") Music
+								ul#music.collapse
+									li
+										a(href="#") Festivals
+									li
+										a(href="#") Concerts
+
 							li 
 								a(href="#") Theatre
 

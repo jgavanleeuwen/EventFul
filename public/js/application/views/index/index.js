@@ -4,8 +4,9 @@ define([
 	'backbone',
 	'getbootstrap',
 	'modernizr',
-	'views/index/recommend/recommends'
-], function($, _, Backbone, GetBootstrap, Modernizr, RecommendView) {
+	'views/index/recommend/recommends',
+	'views/index/sidebar/sidebar'
+], function($, _, Backbone, GetBootstrap, Modernizr, RecommendView, SidebarView) {
 		var indexView = Backbone.View.extend({
 			el: 'body',
 
@@ -20,6 +21,7 @@ define([
 
 			render: function() {
 				window.App.views.RecommendView = new RecommendView();
+				window.App.views.SidebarView = new SidebarView();
 			}
 
 

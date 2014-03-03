@@ -79,22 +79,34 @@ section {
 .sidebar form {
   margin-top: 50px;
 }
-.sidebar form input[type="text"] {
-  background: #DDD;
-  padding: 20px 10px;
+.sidebar form input {
+  background: #DDD!important;
+}
+.sidebar form .btn-group button {
+  width: 10%;
+}
+.sidebar form .btn-group button:first-child {
+  width: 90%;
 }
 .sidebar .secnav {
   margin-top: 50px;
 }
-.sidebar .secnav li a {
+.sidebar .secnav > li a {
   color: #000;
   font-size: 3rem;
   font-weight: 100;
 }
+.sidebar .secnav > li ul {
+  margin: 0 0 0 15px;
+}
+.sidebar .secnav > li li a {
+  font-size: 1.75rem;
+  font-weight: 300;
+}
 @media screen and (max-width: 1024px) {
   .sidebar {
-    left: -400px;
-    width: 400px;
+    left: -300px;
+    width: 300px;
     position: absolute;
     -webkit-transition: left 100ms ease-out;
     -moz-transition: left 100ms ease-out;
@@ -105,7 +117,7 @@ section {
   }
   .sidebar.in + .page {
     position: absolute;
-    margin-left: 400px;
+    margin-left: 300px;
   }
   .sidebar.in {
     left: 0;
@@ -116,6 +128,40 @@ section {
 }
 .sidebar.collapse {
   display: block;
+}
+.tt-dropdown-menu {
+  width: 100%;
+  border: solid 1px #CCC;
+  margin-top: 5px;
+  border-radius: 3px;
+  background: #FFF;
+}
+.tt-dropdown-menu .tt-header {
+  margin: 8px 15px 0 15px;
+  display: block;
+  color: #BBB;
+}
+.tt-dropdown-menu .tt-suggestions {
+  background: #FFF;
+  overflow: hidden;
+  margin-top: 5px;
+}
+.tt-dropdown-menu .tt-suggestions .tt-suggestion {
+  padding: 2px 15px;
+}
+.tt-dropdown-menu .tt-suggestions .tt-suggestion p {
+  line-height: 1em;
+  margin: 6px 0;
+}
+.tt-dropdown-menu .tt-suggestions .tt-suggestion img {
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  margin: 5px 0;
+}
+.tt-dropdown-menu .tt-suggestions .tt-is-under-cursor {
+  background: #EFEFEF;
+  color: #FFF;
 }
 /* PAGE */
 /* NAVBAR */
